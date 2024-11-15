@@ -1,43 +1,46 @@
 {
   "name": "spider-banner",
   "version": "1.2.1",
-  "description": "A React banner component",
-  "main": "dist/spider-banner.umd.js",  
+  "type": "module",
+  "main": "dist/spider-banner.umd.js",
+  "module": "dist/spider-banner.es.js",
+  "types": "src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/spider-banner.git"
+    "url": "https://github.com/godspeed-03/spider-banner.git"
   },
+  "bugs": {
+    "url": "https://github.com/godspeed-03/spider-banner/issues"
+  },
+  "homepage": "https://github.com/godspeed-03/spider-banner#readme",
   "keywords": [
     "react",
     "banner",
     "animation",
-    "spider"
+    "spider",
+    "homebanner",
+    "herobanner",
+    "animatedbanner",
+    "webabnner",
+    "animatesherobanner"
   ],
-  "author": "Your Name",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yourusername/spider-banner/issues"
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
-  "homepage": "https://github.com/yourusername/spider-banner#readme",
   "scripts": {
-    "start": "vite", 
     "build": "vite build",
-    "test": "npm run test",
-    "lint": "eslint .",
-    "prepublishOnly": "npm run build"
+    "publish": "npm run build && npm publish --access public"
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
-    "vite": "^3.0.0",
-    "eslint": "^8.0.0",
-    "tailwindcss": "^3.0.0",
-    "postcss": "^8.0.0"
-  }
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.11"
+  },
+  "author": "Your Name",
+  "license": "MIT"
 }
