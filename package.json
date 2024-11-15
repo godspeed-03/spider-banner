@@ -1,0 +1,43 @@
+{
+  "name": "spider-banner",
+  "version": "1.2.1",
+  "description": "A React banner component",
+  "main": "dist/spider-banner.umd.js",  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/spider-banner.git"
+  },
+  "keywords": [
+    "react",
+    "banner",
+    "animation",
+    "spider"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/spider-banner/issues"
+  },
+  "homepage": "https://github.com/yourusername/spider-banner#readme",
+  "scripts": {
+    "start": "vite", 
+    "build": "vite build",
+    "test": "npm run test",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "vite": "^3.0.0",
+    "eslint": "^8.0.0",
+    "tailwindcss": "^3.0.0",
+    "postcss": "^8.0.0"
+  }
+}
