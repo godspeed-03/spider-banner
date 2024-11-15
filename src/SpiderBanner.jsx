@@ -11,7 +11,7 @@ const SpiderBanner = ({
   const colorArray = colors && colors.length > 0 ? colors : ["white", "black"];
   const length = lineLenght > 100 ? lineLenght : 100;
 
-  console.log(colorArray, dotnumber, length)
+  console.log(colorArray, dotnumber, length);
 
   const bannerRef = useRef();
   const canvasRef = useRef();
@@ -51,7 +51,7 @@ const SpiderBanner = ({
 
       setDots(generatedDots);
     }
-  }, [ dimension.width, dimension.height]);
+  }, [dimension.width, dimension.height]);
 
   // Draw dots and lines on canvas
   useEffect(() => {
@@ -89,7 +89,6 @@ const SpiderBanner = ({
             }
           });
         }
-
       }
     };
 
@@ -120,14 +119,27 @@ const SpiderBanner = ({
     <section
       ref={bannerRef}
       onMouseMove={handleMouseMove}
-      className={`banner relative ${className || ""}`}
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
+      }}
+      className={className || ""}
     >
       {children}
       <canvas
         ref={canvasRef}
         width={dimension.width}
         height={dimension.height}
-        className="canvas absolute w-full h-full top-0 pointer-events-none"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
+        }}
       />
     </section>
   );
