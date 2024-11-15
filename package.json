@@ -7,7 +7,7 @@
   "types": "src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/godspeed-03/spider-banner.git"
+    "url": "git+https://github.com/godspeed-03/spider-banner.git"
   },
   "bugs": {
     "url": "https://github.com/godspeed-03/spider-banner/issues"
