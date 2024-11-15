@@ -1,6 +1,6 @@
 {
   "name": "spider-banner",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "type": "module",
   "main": "dist/spider-banner.umd.js",
   "module": "dist/spider-banner.es.js",
@@ -30,7 +30,7 @@
   },
   "scripts": {
     "build": "vite build"
-    },
+  },
   "dependencies": {
     "autoprefixer": "^10.0.0",
     "postcss": "^8.0.0",
