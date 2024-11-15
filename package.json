@@ -30,7 +30,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "publish": "npm run build && npm publish --access public"
+    "pub": "npm run build && npm publish --access public"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
