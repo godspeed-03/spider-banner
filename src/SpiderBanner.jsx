@@ -39,10 +39,7 @@ const SpiderBanner = ({
 
   useEffect(() => {
     if (dimension.width && dimension.height) {
-      const totalDots = Math.floor(
-        dotnumber * ((dimension.width * dimension.height) / (1522 * 718))
-      );
-      const generatedDots = Array.from({ length: totalDots }, () => ({
+      const generatedDots = Array.from({ length: dotnumber }, () => ({
         x: Math.random() * dimension.width,
         y: Math.random() * dimension.height,
         size: Math.random() * 3 + 5,
