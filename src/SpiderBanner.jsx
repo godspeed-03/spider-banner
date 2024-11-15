@@ -11,7 +11,6 @@ const SpiderBanner = ({
   const colorArray = colors && colors.length > 0 ? colors : ["white", "black"];
   const length = lineLenght > 100 ? lineLenght : 100;
 
-  console.log(colorArray, dotnumber, length);
 
   const bannerRef = useRef();
   const canvasRef = useRef();
@@ -50,27 +49,40 @@ const SpiderBanner = ({
     }
   }, [dimension.width, dimension.height]);
 
-  // Draw dots and lines on canvas
   useEffect(() => {
     const drawLines = () => {
       if (canvasRef.current) {
         const context = canvasRef.current.getContext("2d");
 
-        // Clear canvas before drawing
         context.clearRect(
           0,
           0,
           canvasRef.current.width,
           canvasRef.current.height
         );
+
         dots.forEach((dot) => {
           context.fillStyle = dot.color;
           context.beginPath();
           context.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
           context.fill();
+          ``;
         });
 
-        if (mousePosition.x > 0 && mousePosition.y > 0) {
+        console.log(mousePosition.x, canvasRef.current.width -10)
+
+        const ratio = window.devicePixelRatio || 1;
+
+        if (
+          mousePosition.x <= 10 ||
+          mousePosition.y <= 10 ||
+          mousePosition.x * ratio >= canvasRef.current.width - 10 ||
+          mousePosition.y * ratio >= canvasRef.current.height - 10
+        ) {
+          return;
+        }
+
+        if (mousePosition.x > 10 && mousePosition.y > 10) {
           dots.forEach((dot) => {
             const distance = Math.sqrt(
               (mousePosition.x - dot.x) ** 2 + (mousePosition.y - dot.y) ** 2
@@ -92,7 +104,6 @@ const SpiderBanner = ({
     drawLines();
   }, [mousePosition, dots]);
 
-  // Handle mouse movement
   const handleMouseMove = (event) => {
     const position = bannerRef.current.getBoundingClientRect();
     setMousePosition({
@@ -101,7 +112,6 @@ const SpiderBanner = ({
     });
   };
 
-  // Adjust canvas resolution for high-DPI screens
   useEffect(() => {
     if (canvasRef.current) {
       const context = canvasRef.current.getContext("2d");
